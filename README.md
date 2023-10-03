@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project helps you to find trending crypto coins or search for any available coin where you can check coin's currect price in both rupees and us dollar. Also there is graph where you can check data of price fluctuation upto 5years. Login/Signup helps you to create an account where you can make your own watchlist of coins if interested. You can update watchlist by adding and deleting coins.
 
 ## Available Scripts
 

@@ -1,13 +1,568 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: aliceblue; */
+  /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.title{
+  text-align: left;
+  flex-grow: 1;
+  font-size: 25px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif  !important;
+}
+a{
+  text-decoration: none;
+  color: aliceblue;
+  
+}
+/* input{
+  outline:none;
+  width: 60%;
+  line-height: 30px;
+  border-radius: 15px;
+  border: 1px black solid;
+  font-size: 15px;
+  padding: 0 10px;
+  background-color: aliceblue;
+} */
+img{
+  max-width: 100%;
+  display: block;
+}
+
+.width{
+  max-width: 600px;
+  margin: 0 auto;
+  width: 92%;
+  text-align: center;
+  /* font-size: 25px; */
+}
+
+.header{
+  background-color: #6A1B9A;
+  position: sticky;
+  top: 0;
+  color: aliceblue;
+  z-index: 10;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  
+}
+.mobbtn{
+  display: none;
+}
+.title h1{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif  !important;
+}
+.watch a{
+  text-align: right;
+  margin-left: 15px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.watch a:hover{
+  text-decoration: underline;
+  
+}
+
+.search{
+  padding: 15px;
+}
+.search input{
+  outline:none;
+  line-height: 30px;
+  border-radius: 15px;
+  border: 1px black solid;
+  width: 60%;
+  margin: 5px;
+  font-size: 15px;
+  padding: 0 10px;
+  background-color: aliceblue;
+}
+.search h3{
+  margin-bottom: 10px;
+}
+.homeBody{
+  background-color: aliceblue;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* height: 100vh; */
+}
+.search-inp{
+  position: relative;
+}
+@keyframes rotating {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform:translateY(-50%) rotate(360deg);
+  }
+}
+
+.search-inp  svg{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 1px;
+  right: 260px;
+  animation: 2s rotating infinite linear;
+  opacity: 0;
+  transition: 1s opacity;
+}
+.searching.search-inp svg{
+  opacity: 1;
+}
+/* .home-cryps{
+  height: 100%;
+} */
+.home-cryps h2{
+  font-size: 30px;
+  text-align: center;
+  margin: 10px;
+}
+.home-cryp{
+  transition: transform 0.5s ease;
+}
+.home-cryp a{
+  display: flex;
+  align-items: center;
+  padding: 20px 10px;
+  gap: 20px;
+  
+}
+.home-cryp span{
+  display: block;
+}
+.home-cryp:hover{
+  background-color: #f6e7ff;
+  border-radius: 10px;
+  transform: scale(1.05);
+}
+.cryp-img{
+  width: 40px;
+}
+.cryp-name{
+  flex: 1;
+  font-size: 25px;
+  text-align: left;
+  color: black;
+}
+.cryp-pri{
+  text-align: left;
+}
+.pri-btc{
+  color: black;
+  font-size: 20px;
+}
+.pri-usd{
+  color: rgb(105, 105, 105);
+  font-size: 13px;
+}
+/* SHOW CSS */
+.show-body{
+  background-color: aliceblue;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.show-head{
+  text-align: center;
+  padding: 20px 0;
+}
+.show-head img{
+  width: 80px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+
+}
+.show-head h2{
+  font-size: 30px;
+}
+.show-graph{
+  height: 200px;
+  width: 100%;
+  /* box-shadow: px 5px 20px rgba(172, 172, 172, 0.5); */
+}
+.listbtn{
+  text-align: center;
+  margin-top: 10px;
+}
+.graphbtn button{
+  margin: 0 5px;
+}
+.active-button{
+  /* background-color: #5dca4cf3; */
+  border: 1px solid black;
+  font-weight: bold;
+}
+
+.show-details{
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  width: 650px;
+  font-size: 25px;
+  margin-top: 10px;
+}
+/* .show-details h2{
+  
+} */
+.detail-item{
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  font-size: 20px;
+  margin: 10px 0;
+  padding: 10px 0;
+  border-bottom: 1px rgb(206, 206, 206) solid;
+} .detail-item span{
+  font-size: 18px;
+  color: #555555;
+}
+button{
+  padding: 8px;
+  background-color: transparent;
+  border: 1px rgb(204, 204, 204) solid;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: #555555;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+button:hover{
+  transform: scale(1.05);
+  /* background-color: #f9efff; */
+  /* background-color: rgb(232, 232, 232); */
+  font-weight: bold;
+}
+/* MY LIST */
+.listhead{
+  /* height: 100vh; */
+  background-color: aliceblue;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.list h2{
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 10px;
+}
+.noitem{
+  margin: 10px;
+  font-size: 20px;
+  color: #555555;
+}
+.listwidth{
+  width: 60%;
+}
+.listfun{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  
+}
+.listfun button{
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+.listfun button:hover{
+  transform: none;
+  background-color: #f9efff;
+  font-weight: normal;
+}
+.listflex{
+  flex: 1;
+  margin-right: 15px;
+}
+.list-items{
+  color: black;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+.list-item{
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: space-between;
+  font-size: 20px;
+}
+.list-item span{
+  padding-right: 40px;
+}
+.list-item img{
+  width: 50px;
+}
+
+/* ADMIN PAGE */
+.admin{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: aliceblue;
+}
+.admList h1{
+  font-size: 40px;
+  margin: 10px 0;
+}
+.admList{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.admName{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.admUsers{
+  display: flex;
+  justify-content: center;
+  /* text-align: center; */
+  align-items: center;
+  flex-direction: row;
+  font-size: 20px;
+  margin: 0px 10px 10px 0px;
+}
+.admUser{
+  /* padding: 5px 0; */
+  
+  width: 300px;
+  color: #555555;
+  text-align: left;
+}
+.btn{
+  margin-top: 10px;
+}
+ /* LOGIN/SIGNUP FORM  */
+.regis{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  height: 90vh;
+}
+.regis h1{
+  margin-top: 10px;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.form input{
+  outline:none;
+  line-height: 30px;
+  border-radius: 10px;
+  border: 1px black solid;
+  /* width: 60%; */
+  margin: 5px ;
+  font-size: 15px;
+  padding: 0 10px;
+  background-color: aliceblue;
+}
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+@media (max-width: 768px) {
+  .width {
+    width: 100%;
+    max-width: 500px;
+  }
+  .show-details {
+    width: 80%;
+  }
+  .show-head img {
+    width: 50px;
+  }
+  .search input {
+    width: 80%;
+  }
+  .home-cryp {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cryp-name {
+    text-align: center;
+  }
+  .list-item{
+    font-size: 18px;
+  }
+  .list-item img {
+    width: 40px;
+    border-radius: 50%;
+  }
+  .admList h1{
+    font-size: 35px;
+  }
+}
+@media (max-width: 660px) {
+  .title {
+    font-size: 20px;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    backdrop-filter: blur(5px); /* Add a blur effect to the background */
+    z-index: 999; /* Make it appear above everything else */
+    display: none; /* Initially hidden */
+  }
+  
+  .overlay.active {
+    display: block; /* Show the overlay when it's active */
+  }
+  .watch {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0px; /* Start off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #6A1B9A;
+    z-index: 1000;
+    transition: transform .4s ease-in-out;
+    transform: translateX(100%);
+  }
+  
+  .watch-active {
+    right: 0; /* Slide in from the right */
+    display: block;
+    transform: translateX(0%);
+  }
+
+  .watch a {
+    display: block;
+    padding: 15px 10px;
+    font-size: 18px;
+    text-align: left;
+    color: #fff;
+    text-decoration: none;
+  }
+  .navcross{
+    display: flex;
+    justify-content: end;
+    margin: 10px 10px 0 10px;
+    border-bottom: 1px solid #f6e7ff;
+  }
+  .mobbtn{
+    display: block;
+    color: aliceblue;
+    border: none;
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  .mobbtn:hover{
+    background-color: transparent;
+  }
+  .search h3{
+    font-size: 25px;
+  }
+  .width{
+    max-width: 400px;
+  }
+  .width h2{
+    font-size: 25px;
+  }
+  .cryp-img{
+    width: 30px;
+  }
+  .cryp-name {
+    text-align: center;
+    font-size: 22px;
+  }
+  .pri-btc{
+    font-size: 17px;
+  }
+  .listwidth{
+    width: 90%;
+  }
+  .admList h1{
+    font-size: 28px;
+  }
+  .admName{
+    font-size: 18px;
+  }
+  .admUser{
+    font-size: 18px;
+  }
+}
+@media (max-width: 500px) {
+  .title {
+    font-size: 20px;
+  }
+  .search h3{
+    font-size: 25px;
+  }
+  .width{
+    max-width: 85%;
+  }
+  .width h2{
+    font-size: 25px;
+  }
+  .search input {
+    width: 80%;
+  }
+  .home-cryp {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cryp-img{
+    width: 25px;
+  }
+  .cryp-name {
+    text-align: center;
+    font-size: 20px;
+  }
+  .pri-btc{
+    font-size: 16px;
+  }
+  .listfun{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .list-width {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 10px auto;
+  }
+  .list-item{
+    padding: 0 10px;
+  }
+  
+  .list-item img {
+    width: 40px;
+  }
+  .show-head img {
+    width: 50px;
+  }
+  .admList h1{
+    font-size: 28px;
+  }
+  .admName{
+    font-size: 18px;
+  }
+  .admUser{
+    font-size: 18px;
+  }
 }
